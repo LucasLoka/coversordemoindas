@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="jjj.css">
+        <title>Meu Site - Página Home</title>
+        <script src="script.js"></script>
+        <style>
+          
+
+            h1 {
+                color: black;
+                text-align: center;
+            }
+           
+            
+        </style>
+    </head>
+    <body>
+        <h1>Bem-vindo ao Conversor de moedas</h1>
+    
+        
+    </body>
+<head>
+  <title>Conversor de Moedas</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conversor de Moedas</h1>
+    <div class="form-group">
+      <label>Valor em Dólar (USD)</label>
+      <input type="number" id="usd-input" placeholder="Digite o valor em dólar">
+    </div>
+    <div class="form-group">
+      <label>Valor em Real (BRL)</label>
+      <input type="number" id="brl-input" placeholder="Digite o valor em real">
+    </div>
+    <button onclick="convertCurrency()">Converter</button>
+    <div class="result">
+      <p>Valor Convertido: <span id="converted-value"></span></p>
+    </div>
+  </div>
+
+  <script>
+
+    function convertCurrency() {
+      
+      var usdValue = parseFloat(document.getElementById('usd-input').value);
+      var brlValue = parseFloat(document.getElementById('brl-input').value);
+      
+      // Verificar se pelo menos algum valor foi digitado
+      if (!usdValue && !brlValue) {
+        alert('Digite um valor em dólar ou em real.');
+        return;
+      }
+      
+      
+      if (usdValue && !brlValue) {
+        var convertedValue = usdValue * 5.32; 
+      } else if (!usdValue && brlValue) {
+        var convertedValue = brlValue / 5.32; 
+      }
+      
+      
+      document.getElementById('converted-value').textContent = convertedValue.toFixed(2);
+    }
+  </script>
+</body>
+</html>

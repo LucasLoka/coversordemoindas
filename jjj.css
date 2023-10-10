@@ -1,0 +1,8 @@
+body {
+    background-image: url("moinda.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+ iframe {
+     border: 7px solid black;
+  }
